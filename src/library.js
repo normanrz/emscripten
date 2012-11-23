@@ -2462,6 +2462,7 @@ LibraryManager.library = {
       if (format[formatIndex] === '%' && format[formatIndex+1] == 'n') {
         var argPtr = {{{ makeGetValue('varargs', 'argIndex', 'void*') }}};
         {{{ makeSetValue('argPtr', 0, 'soFar', 'i32') }}};
+        argIndex += Runtime.getNativeFieldSize('void*');
         formatIndex += 2;
         continue;
       }
